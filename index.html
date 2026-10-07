@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f8f4">
+  <meta name="description" content="Shop everyday favourites at IMCS EDUMART. A friendly demo shop for students and the community.">
+  <title>IMCS EDUMART — Good things, everyday</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="announcement">A little something for your everyday <span>✳</span> Enjoy 10% off with <strong>STUDENT10</strong></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="IMCS EDUMART home" data-page="home">
+      <span class="brand-mark">i<span>✳</span></span>
+      <span class="brand-name">IMCS <b>EDUMART</b><small>GOOD THINGS, EVERYDAY</small></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <button class="nav-link active" data-page="home">Home</button>
+      <button class="nav-link" data-page="shop">Shop</button>
+      <button class="nav-link" data-page="orders">My orders</button>
+    </nav>
+    <div class="header-actions">
+      <button class="icon-button account-button" id="account-button" aria-label="Account"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 20a6.5 6.5 0 0 1 13 0"/></svg><span class="account-label">Sign in</span></button>
+      <button class="cart-button" id="cart-button" aria-label="Open cart">Bag <span id="cart-count">0</span></button>
+      <button class="menu-button" id="menu-button" aria-label="Open navigation">☰</button>
+    </div>
+  </header>
+
+  <main id="app">
+    <section class="hero page-section" id="home-page">
+      <div class="hero-copy">
+        <p class="eyebrow"><span></span> YOUR NEIGHBOURHOOD GOOD-THINGS SHOP</p>
+        <h1>Little things.<br><em>Big everyday</em><br>energy.</h1>
+        <p class="hero-text">Useful finds, feel-good favourites, and the little things that make your day. All in one happy place.</p>
+        <button class="button button-dark" data-page="shop">Explore the shop <span>↗</span></button>
+        <div class="hero-footnote"><span class="avatar-stack"><i>J</i><i>A</i><i>M</i></span><span>Loved by your everyday people</span><b>★★★★★</b></div>
+      </div>
+      <div class="hero-art">
+        <div class="hero-photo"><img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1050&q=85" alt="A collection of stylish everyday accessories"></div>
+        <div class="hero-sticker"><span>THE LITTLE<br>THINGS CLUB</span><b>✳</b></div>
+        <div class="hero-note">Good finds.<br>Good feels. <span>↗</span></div>
+      </div>
+      <div class="hero-index">01 <span>—</span> 04</div>
+    </section>
+
+    <section class="category-strip page-section">
+      <div class="section-heading"><div><p class="eyebrow">FIND YOUR FAVOURITE</p><h2>A little something for <em>everyone.</em></h2></div><button class="text-link" data-page="shop">All categories <span>↗</span></button></div>
+      <div class="category-grid" id="category-grid"></div>
+    </section>
+
+    <section class="featured-section page-section">
+      <div class="section-heading"><div><p class="eyebrow">THE GOOD STUFF</p><h2>Everyday <em>favourites.</em></h2></div><button class="text-link" data-page="shop">Shop everything <span>↗</span></button></div>
+      <div class="product-grid" id="featured-products"></div>
+    </section>
+
+    <section class="promo-band page-section">
+      <div class="promo-symbol">✳</div><p>GOOD THINGS<br>ARE BETTER <em>SHARED.</em></p>
+      <div class="promo-detail"><span>YOUR FIRST LITTLE TREAT</span><b>10% off your order</b><button class="coupon-copy" id="copy-coupon">USE STUDENT10 <span>↗</span></button></div>
+      <div class="promo-doodle">✳</div>
+    </section>
+
+    <section class="all-products page-section" id="shop-page">
+      <div class="section-heading shop-heading"><div><p class="eyebrow">THE WHOLE HAPPY PLACE</p><h2>Shop <em>everything.</em></h2><p class="muted">The little things you need, and a few you just want.</p></div></div>
+      <div class="shop-controls">
+        <div class="filter-pills" id="filter-pills"></div>
+        <label class="search-box"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"/><path d="m16 16 4 4"/></svg><input id="product-search" type="search" placeholder="Find your thing..." aria-label="Search products"></label>
+        <select id="sort-products" aria-label="Sort products"><option value="featured">Sort: Featured</option><option value="price-low">Price: Low to high</option><option value="price-high">Price: High to low</option><option value="name">Name: A to Z</option></select>
+      </div>
+      <p class="result-count" id="result-count"></p>
+      <div class="product-grid" id="all-products"></div>
+    </section>
+
+    <section class="info-strip page-section">
+      <div><span>01</span><b>Little things, picked with care</b><p>Everyday favourites for real everyday life.</p></div>
+      <div><span>02</span><b>Simple, happy shopping</b><p>Easy browsing, easy checkout, zero fuss.</p></div>
+      <div><span>03</span><b>A shop with good energy</b><p>Made for students, friends, and everyone.</p></div>
+    </section>
+
+    <section class="orders-page page-section hidden" id="orders-page"></section>
+    <section class="admin-page page-section hidden" id="admin-page"></section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-top"><a class="brand footer-brand" href="#" data-page="home"><span class="brand-mark">i<span>✳</span></span><span class="brand-name">IMCS <b>EDUMART</b><small>GOOD THINGS, EVERYDAY</small></span></a><p>A happy little shop for your everyday.</p><button class="text-link" data-page="shop">Come on in <span>↗</span></button></div>
+    <div class="footer-bottom"><span>© 2026 IMCS EDUMART · STUDENT PROJECT DEMO</span><span>NO REAL PAYMENTS · JUST GOOD VIBES ✳</span><button id="admin-link">Shopkeeper login</button></div>
+  </footer>
+
+  <div class="overlay" id="overlay"></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping bag" aria-hidden="true">
+    <div class="drawer-head"><div><p class="eyebrow">YOUR LITTLE FINDS</p><h2>Your bag <span id="drawer-count">(0)</span></h2></div><button class="close-button" data-close aria-label="Close bag">×</button></div>
+    <div class="cart-items" id="cart-items"></div>
+    <div class="cart-summary" id="cart-summary"></div>
+  </aside>
+  <div class="modal-wrap" id="modal-wrap" aria-hidden="true"><div class="modal" id="modal" role="dialog" aria-modal="true"></div></div>
+  <div class="toast" id="toast" role="status"></div>
+</body>
+</html>
